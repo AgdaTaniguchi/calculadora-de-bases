@@ -84,7 +84,7 @@ function binarioPara(numeroBinario, baseFinal){
         let algarismoProvisorio = 0;
         let contador = 0;
         // Checando se é letra na base hexadecimal
-        if(Object.keys(letras).includes(numeroBinarioSeparado[index])){
+        if(Object.keys(letras).includes(numeroBinarioSeparado[index]) && baseFinal == '16'){
             numeroFinal += letras[numeroBinarioSeparado[index]];
             continue;
         }
