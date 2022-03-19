@@ -9,7 +9,7 @@ mudarBase(2, baseFinal.value);
 // Binário para decimal
 // Binário para hexadecimal
 
-function calcular(numero, baseInicial, baseFinal, idInputTroca){
+function calcular(numero, baseInicial, baseFinal, numeroInputTroca){
     let numeroBinario;
     let resultado;
 
@@ -41,11 +41,11 @@ function calcular(numero, baseInicial, baseFinal, idInputTroca){
         resultado = binarioPara(numeroBinario, baseFinal);
     }
 
-    preencherResultado(idInputTroca, resultado);
+    preencherResultado(numeroInputTroca, resultado);
 }
 
-function preencherResultado(idInput, resultado){
-    window['inpNumero' + idInput].value = resultado;
+function preencherResultado(numeroInput, resultado){
+    window['inpNumero' + numeroInput].value = resultado;
 }
 
 function separarDigitos(numero, quantidadeDigitos){
@@ -166,9 +166,10 @@ function mudarBase(idInput, baseValor){
     
     window['base'+ idInput] = baseValor;
 
-    if(inpNumero1.value != ''){
-        calcular(inpNumero1.value, baseInicial.value, baseFinal.value, 2);
+    if(inpNumero1.value != '' && inpNumero2.value != ''){
+        calcular(window['inpNumero' + (3 - idInput)].value, window['base' + (3 - idInput)], baseValor, idInput);
     }
+
 }
 
 function verificarNumero(numero, base){
