@@ -172,14 +172,31 @@ function mudarBase(idInput, baseValor){
 
 }
 
-function verificarNumero(numero, base){
-    // var algarismos = {'2' : '(?!^[0-1]+$)', '8' : '^[0-7]+$', '10' : '^[0-9]+$', '16' : '[0-9A-D]$'};
+function verificarNumero(input, base){
+    let algarismos = {
+        '2': {
+            regExp: /[^0-1]/g,
+            nomeBase: 'binária',
+            algarismos: '0 e 1'
+        },
+        '8': {
+            regExp: /[^0-7]/g,
+            nomeBase: 'octal',
+            algarismos: '0 a 7'
+        },
+        '10': {
+            regExp: /[^0-9]/g,
+            nomeBase: 'decimal',
+            algarismos: '0 a 9'
+        },
+        '16': {
+            regExp: /[^a-fA-F0-9]/g,
+            nomeBase: 'hexadecimal',
+            algarismos: '0 a 9 e A a F'
+        }
+    };
 
-    // var regEx = new RegExp(algarismos[base], "g");
-    
-    // numero.value = numero.value.replace(regEx, "");
-    // if(!regEx.test(numero)){
-    //     event.preventDefault();
-    //     return false;
-    // }
+    let numero = input.value;
+
+    input.value = numero.replace(algarismos[base].regExp, '');
 }

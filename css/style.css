@@ -20,7 +20,7 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -115,5 +115,49 @@ h1 {
   color: #929292;
   text-align: center;
   margin-bottom: 10px;
+}
+
+@-webkit-keyframes entrada-card {
+  0% {
+    right: -70%;
+    opacity: 0;
+  }
+}
+
+@keyframes entrada-card {
+  0% {
+    right: -70%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes saida-card {
+  100% {
+    bottom: -100%;
+  }
+}
+
+@keyframes saida-card {
+  100% {
+    bottom: -100%;
+  }
+}
+
+@-webkit-keyframes tempo-card {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes tempo-card {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

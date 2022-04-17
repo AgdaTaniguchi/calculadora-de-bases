@@ -12,6 +12,9 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <!-- <div id="card">
+            <p id="aviso">Os números na base ${algarismos[base].nomeBase} só aceitam os algarismos ${algarismos[base].algarismos}.</p>
+        </div> -->
         <div class="container">
             <div class="header">
                 <h1>Conversor de bases</h1>
@@ -21,22 +24,22 @@
                     <p for="base1">Base inicial:</p>
                     <select id="baseInicial" onchange="mudarBase(1, baseInicial.value);">
                         <option value="2">Binário</option>
-                        <option value="10">Decimal</option>
                         <option value="8">Octal</option>
+                        <option value="10">Decimal</option>
                         <option value="16">Hexadecimal</option>
                     </select>
                     <p for="base2">Base final:</p>
                     <select id="baseFinal" onchange="mudarBase(2, baseFinal.value);">
                         <option value="10">Decimal</option>
                         <option value="2">Binário</option>
-                        <option value="16">Hexadecimal</option>
                         <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
                     </select>
                 </div>
 
                 <div class="box-metade numeros">
                     <p for="inpNumero1">Número <span id="spnBase1">decimal</span>:</p>
-                    <input type="text" onclick="this.select()" onkeyup="verificarNumero(event, base1); calcular(this.value, base1, base2, 2)" id="inpNumero1">
+                    <input type="text" onclick="this.select()" onkeyup="verificarNumero(this, base1); calcular(this.value, base1, base2, 2)" id="inpNumero1">
 
                     <p for="inpNumero2">Número <span id="spnBase2">binário</span>:</p>
                     <input type="text" onclick="this.select()" onkeyup="verificarNumero(this, base2); calcular(this.value, base2, base1, 1)" id="inpNumero2">
